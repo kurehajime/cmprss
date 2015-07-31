@@ -20,16 +20,17 @@ to think they can change the world, are the ones who do.
 $ cmprss ThinkDifferent.txt
 
 Hre’sToTheCrzyOns.TheMsfts.TheRbls.TheTroublmkrs.TheRoundPgsInTheSquareHls.
-TheOnsWhoSeeThngsDffrntly.They’reNotFndOfRls.AndTheyHveNoRspctForTheSttsQuo.
+TheOnsWhoSeeThngsDffrntly.Thy’reNotFndOfRls.AndThyHveNoRspctForTheSttsQuo.
 YouCanQuoteThm,DsgreeWthThm,GlrfyOrVlfyThm.
-AboutTheOnlyThngYouCn’tDoIsIgnreThm.BcauseTheyChngeThngs.TheyInvnt.TheyImgne.
-TheyHeal.TheyExplre.TheyCreate.TheyInspre.TheyPshTheHmnRceFrwrd.
-MaybeTheyHveToBeCrzy.
+AboutTheOnlyThngYouCn’tDoIsIgnreThm.BcauseThyChngeThngs.ThyInvnt.ThyImgne.
+ThyHeal.ThyExplre.ThyCreate.ThyInspre.ThyPshTheHmnRceFrwrd.
+MybeThyHveToBeCrzy.
 HowElseCanYouStreAtAnEmptyCnvsAndSeeAWrkOfArt?OrSitInSlnceAnd
 HearASngTht’sNvrBeenWrttn?OrGzeAtARedPlntAndSeeALbrtryOnWheels?
 WeMkeToolsForThseKndsOfPeople.
 WhleSmeSeeThmAsTheCrzyOns,WeSeeGnius.BcauseThePeopleWhoAreCrzyEnough
-ToThnkTheyCanChngeTheWrld,AreTheOnsWhoDo.
+ToThnkThyCanChngeTheWrld,AreTheOnsWhoDo.
+
 
 ```
 
