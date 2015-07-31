@@ -1,6 +1,6 @@
 # cmprss
 
-Compress text
+Lossy compression text
 
 ```
 $ cat ThinkDifferent.txt
