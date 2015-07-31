@@ -32,3 +32,16 @@ WhleSmeSeeThmAsTheCrzyOns,WeSeeGnius.BcauseThePeopleWhoAreCrzyEnough
 ToThnkTheyCanChngeTheWrld,AreTheOnsWhoDo.
 
 ```
+
+### HowToInstll
+
+DwnloadHre  
+https://github.com/kurehajime/cmprss/releases/tag/v1.0
+
+or 
+
+BuildYourSlf
+
+```
+go get github.com/kurehajime/cmprss
+```
