@@ -20,7 +20,7 @@ func main(){
 }
 //CnvrtShrtStrng
 func cmprss(input string)string{
-	re1, _ := regexp.Compile("([bcdfghjklmnpqrstvwxwzBCDFGHJKLMNPQRSTVWXWZ])[aiueo]([bcdfghjklmnpqrstvwxwz])")
+	re1, _ := regexp.Compile("([bcdfghjklmnpqrstvwxwyzBCDFGHJKLMNPQRSTVWXWYZ])[aiueo]([bcdfghjklmnpqrstvwxwyz])")
 	lines:=strings.Split(input,"\n")
 	for l:=0;l<len(lines);l++{
 		words:= strings.Split(lines[l]," ")
