@@ -36,7 +36,7 @@ ToThnkThyCanChngeTheWrld,AreTheOnsWhoDo.
 
 ### HowToInstll
 
-DwnloadHre (Wndws,Lnx,MacOSX)
+DwnloadHre (Wndws,Lnx,MacOSX)  
 https://github.com/kurehajime/cmprss/releases/tag/v1.1
 
 or 
