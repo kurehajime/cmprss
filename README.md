@@ -30,13 +30,17 @@ HearASngTht’sNvrBeenWrttn?OrGzeAtARedPlntAndSeeALbrtryOnWheels?
 WeMkeToolsForThseKndsOfPeople.
 WhleSmeSeeThmAsTheCrzyOns,WeSeeGnius.BcauseThePeopleWhoAreCrzyEnough
 ToThnkThyCanChngeTheWrld,AreTheOnsWhoDo.
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 
 ```
 
 ### HowToInstll
 
-DwnloadHre  
-https://github.com/kurehajime/cmprss/releases/tag/v1.0
+DwnloadHre (Wndws,Lnx,MacOSX)  
+https://github.com/kurehajime/cmprss/releases/tag/v1.1
 
 or 
 
