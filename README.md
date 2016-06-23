@@ -30,10 +30,7 @@ HearASngTht’sNvrBeenWrttn?OrGzeAtARedPlntAndSeeALbrtryOnWheels?
 WeMkeToolsForThseKndsOfPeople.
 WhleSmeSeeThmAsTheCrzyOns,WeSeeGnius.BcauseThePeopleWhoAreCrzyEnough
 ToThnkThyCanChngeTheWrld,AreTheOnsWhoDo.
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
 
 ```
 
