@@ -1,5 +1,7 @@
 # cmprss
 
+[![CircleCI](https://circleci.com/gh/kurehajime/cmprss.svg?style=svg)](https://circleci.com/gh/kurehajime/cmprss)
+
 Lossy compression text
 
 ```
