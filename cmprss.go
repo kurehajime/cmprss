@@ -21,7 +21,7 @@ func main() {
 	fmt.Println(s)
 }
 
-//CnvrtShrtStrng
+//Cmprss : CnvrtShrtStrng
 func Cmprss(input string) string {
 	re1, _ := regexp.Compile("([bcdfghjklmnpqrstvwxwyzBCDFGHJKLMNPQRSTVWXWYZ])[aiueo]([bcdfghjklmnpqrstvwxwyz])")
 	lines := strings.Split(input, "\n")
@@ -50,9 +50,8 @@ func readPipe() (string, bool) {
 			return "", false
 		}
 		return string(bytes), true
-	} else {
-		return "", false
 	}
+	return "", false
 }
 
 //ReadTxtByFle
