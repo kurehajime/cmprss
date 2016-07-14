@@ -39,12 +39,12 @@ ToThnkThyCanChngeTheWrld,AreTheOnsWhoDo.
 ### HowToInstll
 
 DwnloadHre (Wndws,Lnx,MacOSX)  
-https://github.com/kurehajime/cmprss/releases/tag/v1.1
+https://github.com/kurehajime/cmprss/releases
 
 or 
 
 BuildYourSlf
 
 ```
-go get github.com/kurehajime/cmprss
+go get github.com/kurehajime/cmprss/...
 ```
