@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-//ThnkDffrnt.
+//ThnkDffrnt. https://www.youtube.com/watch?v=nmwXdGm89Tk
 func Example_thnkdffrnt() {
 	input := `Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes.
 The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo.
