@@ -1,3 +1,4 @@
+// Package cmprss : TheSntnceToLssyCmprssion.
 package cmprss
 
 import (
