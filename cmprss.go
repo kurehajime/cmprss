@@ -1,25 +1,9 @@
-package main
+package cmprss
 
 import (
-	"fmt"
-	"io/ioutil"
-	"os"
 	"regexp"
 	"strings"
 )
-
-func main() {
-	var text string
-	text, ok := readPipe()
-	if ok == false {
-		text, ok = readFileByArg()
-		if ok == false {
-			os.Exit(1)
-		}
-	}
-	s := Cmprss(text)
-	fmt.Println(s)
-}
 
 //Cmprss : CnvrtShrtStrng
 func Cmprss(input string) string {
@@ -38,31 +22,4 @@ func Cmprss(input string) string {
 		lines[l] = strings.Join(words, "")
 	}
 	return strings.Join(lines, "\n")
-}
-
-//ReadTxtByPpe
-func readPipe() (string, bool) {
-	stats, _ := os.Stdin.Stat()
-	if stats != nil && (stats.Mode()&os.ModeCharDevice) == 0 {
-		bytes, err := ioutil.ReadAll(os.Stdin)
-		if err != nil {
-			fmt.Println(err.Error())
-			return "", false
-		}
-		return string(bytes), true
-	}
-	return "", false
-}
-
-//ReadTxtByFle
-func readFileByArg() (string, bool) {
-	if len(os.Args) < 2 {
-		return "", false
-	}
-	content, err := ioutil.ReadFile(os.Args[1])
-	if err != nil {
-		fmt.Println(err.Error())
-		return "", false
-	}
-	return string(content), true
 }

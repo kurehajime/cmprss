@@ -4,3 +4,5 @@ cmprss
 bin/linux64/cmprss
 
 bin/linux64/cmprss
+
+*.json
