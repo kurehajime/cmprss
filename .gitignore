@@ -1,8 +1,8 @@
 
-cmprss
+.vscode/launch.json
 
-bin/linux64/cmprss
+bin
 
-bin/linux64/cmprss
+cmd/cmprss/debug
 
-*.json
+cmd/cmprss/test.txt
