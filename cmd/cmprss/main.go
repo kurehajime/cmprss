@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
 	"io/ioutil"
@@ -18,10 +19,18 @@ func main() {
 	}
 
 	if ok == false {
-		text, ok = readFileByArg()
-		if ok == false {
-			os.Exit(1)
+		if flag.Arg(0) == "-" {
+			text, ok = readStdin()
+			if ok == false {
+				os.Exit(1)
+			}
+		} else {
+			text, ok = readFileByArg()
+			if ok == false {
+				os.Exit(1)
+			}
 		}
+
 	}
 
 	s := cmprss.Cmprss(text)
@@ -53,4 +62,21 @@ func readFileByArg() (string, bool) {
 		return "", false
 	}
 	return string(content), true
+}
+
+//ScnInpt
+func readStdin() (string, bool) {
+	var text string
+	s := bufio.NewScanner(os.Stdin)
+	for s.Scan() {
+		if s.Text() == "" {
+			break
+		}
+		text += s.Text() + "\n"
+	}
+	if s.Err() != nil {
+		fmt.Println(s.Err())
+		return "", false
+	}
+	return text, true
 }

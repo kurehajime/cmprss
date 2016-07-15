@@ -2,7 +2,43 @@ package cmprss
 
 import (
 	"fmt"
+	"testing"
 )
+
+func TestCmprss(t *testing.T) {
+	//Less is more.
+	input := "Less is more."
+	ans := "LssIsMre."
+	res := Cmprss(input)
+	if res != ans {
+		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", res, ans)
+		return
+	}
+	//Exclsion:len(str) <= 3
+	input = "Cat"
+	ans = "Cat"
+	res = Cmprss(input)
+	if res != ans {
+		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", res, ans)
+		return
+	}
+	//Exclsion:DoubleLwrCse
+	input = "meat meet moot"
+	ans = "MeatMeetMoot"
+	res = Cmprss(input)
+	if res != ans {
+		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", res, ans)
+		return
+	}
+	//Exclsion:FllUpprCse.
+	input = "JPEG"
+	ans = "JPEG"
+	res = Cmprss(input)
+	if res != ans {
+		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", res, ans)
+		return
+	}
+}
 
 //ThnkDffrnt. https://www.youtube.com/watch?v=nmwXdGm89Tk
 func Example_thnkdffrnt() {
