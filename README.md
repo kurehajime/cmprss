@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/kurehajime/cmprss.svg?style=svg)](https://circleci.com/gh/kurehajime/cmprss) [![GoDoc](https://godoc.org/github.com/kurehajime/cmprss?status.svg)](https://godoc.org/github.com/kurehajime/cmprss)
 
-Lossy compression text
+IrrvrsbleCmprssionForTxt
 
 ```
 $ cat ThinkDifferent.txt
