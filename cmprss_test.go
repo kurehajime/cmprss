@@ -1,47 +1,56 @@
 package cmprss
 
 import (
+	"bytes"
 	"fmt"
+	"strings"
 	"testing"
 )
 
 func TestCmprss(t *testing.T) {
+	buf := &bytes.Buffer{}
+
 	//Less is more.
 	input := "Less is more."
 	ans := "LssIsMre."
-	res := Cmprss(input)
-	if res != ans {
-		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", res, ans)
+	Cmprss(strings.NewReader(input), buf)
+	if buf.String() != ans {
+		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", buf.String(), ans)
 		return
 	}
 	//Exclsion:len(str) <= 3
+	buf = &bytes.Buffer{}
 	input = "Cat"
 	ans = "Cat"
-	res = Cmprss(input)
-	if res != ans {
-		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", res, ans)
+	Cmprss(strings.NewReader(input), buf)
+	if buf.String() != ans {
+		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", buf.String(), ans)
 		return
 	}
 	//Exclsion:DoubleLwrCse
+	buf = &bytes.Buffer{}
 	input = "meat meet moot"
 	ans = "MeatMeetMoot"
-	res = Cmprss(input)
-	if res != ans {
-		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", res, ans)
+	Cmprss(strings.NewReader(input), buf)
+	if buf.String() != ans {
+		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", buf.String(), ans)
 		return
 	}
 	//Exclsion:FllUpprCse.
+	buf = &bytes.Buffer{}
 	input = "JPEG"
 	ans = "JPEG"
-	res = Cmprss(input)
-	if res != ans {
-		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", res, ans)
+	Cmprss(strings.NewReader(input), buf)
+	if buf.String() != ans {
+		t.Errorf("Cmprss(x) =\n%s\n, want \n%s", buf.String(), ans)
 		return
 	}
 }
 
 //ThnkDffrnt. https://www.youtube.com/watch?v=nmwXdGm89Tk
 func Example_thnkdffrnt() {
+	buf := &bytes.Buffer{}
+
 	input := `Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes.
 The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo.
 You can quote them, disagree with them, glorify or vilify them.
@@ -53,8 +62,8 @@ hear a song that’s never been written? Or gaze at a red planet and see a labor
 We make tools for these kinds of people.
 While some see them as the crazy ones, we see genius. Because the people who are crazy enough
 to think they can change the world, are the ones who do.`
-	res := Cmprss(input)
-	fmt.Println(res)
+	Cmprss(strings.NewReader(input), buf)
+	fmt.Println(buf.String())
 	//Output:Hre’sToTheCrzyOns.TheMsfts.TheRbls.TheTroublmkrs.TheRoundPgsInTheSquareHls.
 	//TheOnsWhoSeeThngsDffrntly.Thy’reNotFndOfRls.AndThyHveNoRspctForTheSttsQuo.
 	//YouCanQuoteThm,DsgreeWthThm,GlrfyOrVlfyThm.

@@ -4,64 +4,60 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"os"
+	"strings"
+
+	"io"
 
 	"github.com/kurehajime/cmprss"
 )
 
 func main() {
-	var text string
+	var r io.Reader
 	var ok bool
 	flag.Parse()
 	if len(flag.Args()) == 0 {
-		text, ok = readPipe()
+		r, ok = readPipe()
 	}
 
 	if ok == false {
 		if flag.Arg(0) == "-" {
-			text, ok = readStdin()
+			text, ok := readStdin()
+			r = strings.NewReader(text)
 			if ok == false {
 				os.Exit(1)
 			}
 		} else {
-			text, ok = readFileByArg()
+			r, ok = readFileByArg()
 			if ok == false {
 				os.Exit(1)
 			}
 		}
 
 	}
-
-	s := cmprss.Cmprss(text)
-	fmt.Println(s)
+	cmprss.Cmprss(r, os.Stdout)
 }
 
 //ReadTxtByPpe
-func readPipe() (string, bool) {
+func readPipe() (io.Reader, bool) {
 	stats, _ := os.Stdin.Stat()
 	if stats != nil && (stats.Mode()&os.ModeCharDevice) == 0 {
-		bytes, err := ioutil.ReadAll(os.Stdin)
-		if err != nil {
-			fmt.Println(err.Error())
-			return "", false
-		}
-		return string(bytes), true
+		return os.Stdin, true
 	}
-	return "", false
+	return nil, false
 }
 
 //ReadTxtByFle
-func readFileByArg() (string, bool) {
+func readFileByArg() (io.Reader, bool) {
 	if len(os.Args) < 2 {
-		return "", false
+		return nil, false
 	}
-	content, err := ioutil.ReadFile(os.Args[1])
+	r, err := os.Open(os.Args[1])
 	if err != nil {
 		fmt.Println(err.Error())
-		return "", false
+		return nil, false
 	}
-	return string(content), true
+	return r, true
 }
 
 //ScnInpt

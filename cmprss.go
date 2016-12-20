@@ -2,16 +2,21 @@
 package cmprss
 
 import (
+	"bufio"
+	"io"
+	"log"
 	"regexp"
 	"strings"
 )
 
 //Cmprss : CnvrtShrtStrng
-func Cmprss(input string) string {
+func Cmprss(r io.Reader, w io.Writer) {
 	re, _ := regexp.Compile("([bcdfghjklmnpqrstvwxwyzBCDFGHJKLMNPQRSTVWXWYZ])[aiueo]([bcdfghjklmnpqrstvwxwyz])")
-	lines := strings.Split(input, "\n")
-	for l := 0; l < len(lines); l++ {
-		words := strings.Split(lines[l], " ")
+	r2 := bufio.NewReader(r)
+	for {
+		// line includes '\n'.
+		text, err := r2.ReadString('\n')
+		words := strings.Split(text, " ")
 		for i := 0; i < len(words); i++ {
 			word := strings.Title(words[i])
 			if len(word) > 3 {
@@ -19,7 +24,12 @@ func Cmprss(input string) string {
 			}
 			words[i] = word
 		}
-		lines[l] = strings.Join(words, "")
+		w.Write([]byte(strings.Join(words, "")))
+		if err == io.EOF {
+			break
+		} else if err != nil {
+			log.Fatal(err)
+		}
 	}
-	return strings.Join(lines, "\n")
+	return
 }

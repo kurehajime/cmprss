@@ -6,3 +6,7 @@ bin
 cmd/cmprss/debug
 
 cmd/cmprss/test.txt
+
+.vscode
+
+_obj
