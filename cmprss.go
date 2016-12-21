@@ -3,8 +3,9 @@ package cmprss
 
 import (
 	"bufio"
+	"fmt"
 	"io"
-	"log"
+	"os"
 	"regexp"
 	"strings"
 )
@@ -28,7 +29,7 @@ func Cmprss(r io.Reader, w io.Writer) {
 		if err == io.EOF {
 			break
 		} else if err != nil {
-			log.Fatal(err)
+			fmt.Fprintln(os.Stderr, err.Error())
 		}
 	}
 	return

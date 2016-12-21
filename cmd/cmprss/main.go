@@ -54,7 +54,7 @@ func readFileByArg() (io.Reader, bool) {
 	}
 	r, err := os.Open(os.Args[1])
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Fprintln(os.Stderr, err.Error())
 		return nil, false
 	}
 	return r, true
@@ -71,7 +71,7 @@ func readStdin() (string, bool) {
 		text += s.Text() + "\n"
 	}
 	if s.Err() != nil {
-		fmt.Println(s.Err())
+		fmt.Fprintln(os.Stderr, s.Err())
 		return "", false
 	}
 	return text, true
