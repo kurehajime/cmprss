@@ -48,5 +48,5 @@ or
 BuildYourSlf
 
 ```
-go get github.com/kurehajime/cmprss/...
+go install github.com/kurehajime/cmprss/cmd/cmprss@latest
 ```
